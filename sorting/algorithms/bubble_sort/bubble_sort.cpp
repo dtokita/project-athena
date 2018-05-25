@@ -48,13 +48,14 @@ int BubbleSort::sort() {
 int BubbleSort::printResults() {
   using namespace std::chrono;
 
-  auto r_tspan = duration_cast<milliseconds>(rt2 - rt1);
-  auto a_tspan = duration_cast<milliseconds>(at2 - at1);
-  auto d_tspan = duration_cast<milliseconds>(dt2 - dt1);
+  auto r_tspan = duration_cast<microseconds>(rt2 - rt1);
+  auto a_tspan = duration_cast<microseconds>(at2 - at1);
+  auto d_tspan = duration_cast<microseconds>(dt2 - dt1);
 
-  std::cout << "Random Sort Time: " << r_tspan.count() << " milliseconds." << std::endl;
-  std::cout << "Ascending Sort Time: " << a_tspan.count() << " milliseconds." << std::endl;
-  std::cout << "Descending Sort Time: " << d_tspan.count() << " milliseconds." << std::endl;
+  std::cout << "Vector Size: " << rvector->size() << std::endl;
+  std::cout << "Random Sort Time: " << r_tspan.count() << " microseconds." << std::endl;
+  std::cout << "Ascending Sort Time: " << a_tspan.count() << " microseconds." << std::endl;
+  std::cout << "Descending Sort Time: " << d_tspan.count() << " microseconds." << std::endl << std::endl;
 
   return 0;
 }
