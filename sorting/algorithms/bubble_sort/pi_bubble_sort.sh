@@ -6,8 +6,8 @@ then
   exit 0
 fi
 
-for (( i=1; i<1000000000; i=i*2 ))
+for (( i=1; i<1000000000; i=i+100 ))
 do
   echo "Vector Size $i"
-  ./bubble_sort $i $1 >> result.txt
+  ./bubble_sort $i $1 >> pi_$1_result.txt
 done

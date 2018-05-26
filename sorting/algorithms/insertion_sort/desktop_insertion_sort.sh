@@ -9,5 +9,5 @@ fi
 for (( i=1; i<1000000000; i=i*2 ))
 do
   echo "Vector Size $i"
-  ./selection_sort $i $1 >> result.txt
+  ./insertion_sort $i $1 >> desktop_$1_result.txt
 done
