@@ -37,6 +37,14 @@ class SortingAlgorithm {
     std::chrono::high_resolution_clock::time_point endTime();
 
     virtual int createDataStructure() = 0;
-    virtual int sort() = 0;
-    virtual int printResults() = 0;
+
+    virtual int sortAll() = 0;
+    virtual int sortRandom() = 0;
+    virtual int sortAscending() = 0;
+    virtual int sortDescending() = 0;
+
+    virtual int printAllResults() = 0;
+    virtual int printRandomResults() = 0;
+    virtual int printAscendingResults() = 0;
+    virtual int printDescendingResults() = 0;
 };

@@ -12,8 +12,16 @@ class BubbleSort : public SortingAlgorithm {
     ~BubbleSort();
 
     int createDataStructure();
-    int sort();
-    int printResults();
+
+    int sortAll();
+    int sortRandom();
+    int sortAscending();
+    int sortDescending();
+
+    int printAllResults();
+    int printRandomResults();
+    int printAscendingResults();
+    int printDescendingResults();
 };
 
 #endif

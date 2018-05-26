@@ -36,7 +36,7 @@ int SelectionSort::createDataStructure() {
   return 0;
 }
 
-int SelectionSort::sort() {
+int SelectionSort::sortAll() {
   std::cout << "Selection Sorting..." << std::endl << std::endl;
 
   rt1 = startTime();
@@ -54,7 +54,31 @@ int SelectionSort::sort() {
   return 0;
 }
 
-int SelectionSort::printResults() {
+int SelectionSort::sortRandom() {
+  rt1 = startTime();
+  sortVector(rvector);
+  rt2 = endTime();
+
+  return 0;
+}
+
+int SelectionSort::sortAscending() {
+  at1 = startTime();
+  sortVector(avector);
+  at2 = endTime();
+
+  return 0;
+}
+
+int SelectionSort::sortDescending() {
+  dt1 = startTime();
+  sortVector(dvector);
+  dt2 = endTime();
+
+  return 0;
+}
+
+int SelectionSort::printAllResults() {
   using namespace std::chrono;
 
   auto r_tspan = duration_cast<microseconds>(rt2 - rt1);
@@ -65,6 +89,33 @@ int SelectionSort::printResults() {
   std::cout << "Random Sort Time: " << r_tspan.count() << " microseconds." << std::endl;
   std::cout << "Ascending Sort Time: " << a_tspan.count() << " microseconds." << std::endl;
   std::cout << "Descending Sort Time: " << d_tspan.count() << " microseconds." << std::endl << std::endl;
+
+  return 0;
+}
+
+int SelectionSort::printRandomResults() {
+  using namespace std::chrono;
+
+  auto r_tspan = duration_cast<microseconds>(rt2 - rt1);
+  std::cout << r_tspan.count() << " - Vector Size: " << rvector->size() << std::endl;
+
+  return 0;
+}
+
+int SelectionSort::printAscendingResults() {
+  using namespace std::chrono;
+
+  auto a_tspan = duration_cast<microseconds>(at2 - at1);
+  std::cout << a_tspan.count() << " - Vector Size: " << avector->size() << std::endl;
+
+  return 0;
+}
+
+int SelectionSort::printDescendingResults() {
+  using namespace std::chrono;
+
+  auto d_tspan = duration_cast<microseconds>(dt2 - dt1);
+  std::cout << d_tspan.count() << " - Vector Size: " << dvector->size() << std::endl;
 
   return 0;
 }
